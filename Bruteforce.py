@@ -37,7 +37,6 @@ class Bruteforce:
                     print ("Found it. Decrypted: " + token)
                     print ("It took %d times to get it." % count)
                     return token
-                    break
                 elif result is False and verbosity is True:
                     print ("Attempt failed, moving on...")
                 count = count + 1
@@ -67,8 +66,7 @@ class Bruteforce:
                 print("Found it! Term found: %s" % term)
                 print("Salted string (decrypted): %s" % new_term)
                 print("Took about %d times to find this salted hash." % count)
-                return new_term # return the found salted string
-                break
+                return new_term  # return the found salted string
             count = count + 1
             if time_in_between > 0:
                 time.sleep(time_in_between)
@@ -76,7 +74,7 @@ class Bruteforce:
 
     # most computationally intensive function, will evaluate a term against the rest of the list...
     # ...and the cycle continues
-    def crack_two_terms(self, verbosity, space_in_between, ignore_same_term):  # used with spaces
+    def crack_two_terms_complete(self, verbosity, space_in_between, ignore_same_term):  # used with spaces
         count = 0
         for term in self.enumerate_list():  # for loop will go through defined list
             for second_term in self.enumerate_list():
@@ -89,6 +87,7 @@ class Bruteforce:
                     term_to_use = term + " " + second_term # new phrase
                 else: # opposite of above
                     term_to_use = term + second_term
+                print (term_to_use)
                 hex_obj = hashlib.sha1(term_to_use)
                 new_term = hex_obj.hexdigest()  # new term hashed
                 if ignore_same_term is False:  # same term is evaluated
@@ -108,5 +107,22 @@ class Bruteforce:
                         if verbosity is True:
                             print ("Continuing the loop...")
                 count = count + 1
+        print ("Two term hash wasn't found.")
+
+    def crack_two_terms_pairs(self, verbosity, space_in_between):  # used with spaces
+        count = 0
+        term_list = self.enumerate_list()
+        for i in range (0, len(term_list) - 1):
+            term_to_find = ""
+            if space_in_between is True:
+                term_to_find = term_list[i] + " " + term_list[i + 1]
+            else:
+                term_to_find = term_list[i] + term_list[i + 1]
+            hex_obj = hashlib.sha1(term_to_find)
+            new_hash = hex_obj.hexdigest()
+            if new_hash == self.hash:
+                print ("Found it: " % term_to_find)
+                print ("Found in %d attempts." % count)
+            count = count + 1
         print ("Two term hash wasn't found.")
 
