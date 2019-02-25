@@ -99,8 +99,8 @@ class Bruteforce:
                     else:
                         if verbosity is True:
                             print ("Continuing the loop...")
-                elif ignore_same_term is True:  # ignoring if two terms are the same
-                    if new_term == self.hash and term != second_term:
+                elif ignore_same_term is True and term != second_term:  # ignoring if two terms are the same
+                    if new_term == self.hash:
                         print ("Found term: %s" % term_to_use)
                         print ("Took about %d times to find this two term hash." % count)
                         return str(term_to_use)
