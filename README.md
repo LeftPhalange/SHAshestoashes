@@ -18,7 +18,7 @@ You have the following functions in Bruteforce.py:
 
 ``crack(self, verbosity):`` This is the main event -- the function used to crack SHA1 hashes using the dictionary URL that you had specified when making a new instance of the Bruteforce object. If found, a count will be printed for how many attempts it took. As with any brute-forcing technology, it's computationally intensive. Returns the decrypted term.
 
-verbosity = Enable or disable verbosity using True or False. When enabled, hashes that are being evaluated are put on display.
+verbosity: Enable or disable verbosity using True or False. When enabled, hashes that are being evaluated are put on display.
 
 ``crack_with_salt(self, salt, expected_hash, verbosity, time_in_between, concatenate_after):`` Most computationally intensive function in the library. Decrypts salt term using the list, then enumerates through the list again, concatenating both "decrypted" terms together (under your conditions, before or after) until the expected hash is found. Returns the decrypted term.
 
