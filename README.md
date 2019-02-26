@@ -81,3 +81,7 @@ Windows:
 ``C:\path\to\python27\python.exe Client.py``
 
 (C:\ should be your respective drive letter, where the Python binary is. Using Python 2.7 is recommended.)
+
+#### Update (2/25/2019, 7:25 PM)
+
+Since in the instructions, getting raw input is required.
