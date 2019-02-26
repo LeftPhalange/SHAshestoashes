@@ -87,7 +87,6 @@ class Bruteforce:
                     term_to_use = term + " " + second_term # new phrase
                 else: # opposite of above
                     term_to_use = term + second_term
-                print (term_to_use)
                 hex_obj = hashlib.sha1(term_to_use)
                 new_term = hex_obj.hexdigest()  # new term hashed
                 if ignore_same_term is False:  # same term is evaluated

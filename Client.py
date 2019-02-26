@@ -30,4 +30,4 @@ b.crack_with_salt("f0744d60dd500c92c0d37c16174cc58d3c4bdd8e",
 # would get from both terms
 
 b = Bruteforce.Bruteforce(list_url, "34302959e138917ce9339c0b30ec50e650ce6b40")
-b.crack_two_terms_pairs(False, True)
+b.crack_two_terms_complete (False, True, False)
