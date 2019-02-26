@@ -84,4 +84,6 @@ Windows:
 
 #### Update (2/25/2019, 7:25 PM)
 
-Since in the instructions, getting raw input is required.
+Since in the instructions, that getting raw input is required, a new Python script is made (SHAshestoashes.py).
+
+Follow the instructions above (respective of UNIX or Windows to use Python to call the script.)
