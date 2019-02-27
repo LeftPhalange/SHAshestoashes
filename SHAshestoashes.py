@@ -1,6 +1,5 @@
 import Bruteforce
 
-print ("The following prompts need quotations enclosed: \"")
 hash_to_compare = raw_input("Please enter a SHA1 hash to brute force: ")
 list_url = raw_input("Please enter a URL for your password list (if left blank, default will be used): ")
 choices = raw_input("Select one of the following:\n(1) Simple hash decryption (one term)\n"
