@@ -1,4 +1,4 @@
-# SHAshestohashes
+# SHAshestoashes
 
 This is a project made for my Blockchain & Applications course at Georgia State University, and this is used to crack SHA1 hashes, utilizing a dictionary or password list of some sort, in Python 2.7.
 
